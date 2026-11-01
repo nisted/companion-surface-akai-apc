@@ -1,0 +1,21 @@
+{
+	"$schema": "../node_modules/@companion-surface/base/assets/manifest.schema.json",
+	"type": "surface",
+	"id": "akai-apc",
+	"name": "Akai APC",
+	"shortname": "akai-apc",
+	"description": "Akai APC controllers (APC40, APC40 mkII, APC20, APC mini, APC mini mk2, APC Key 25, APC Key 25 mk2) as Companion surfaces, over USB MIDI",
+	"version": "0.0.0",
+	"license": "MIT",
+	"repository": "git+https://github.com/nisted/companion-surface-akai-apc.git",
+	"bugs": "https://github.com/nisted/companion-surface-akai-apc/issues",
+	"maintainers": [{ "name": "Nige Isted", "github": "nisted" }],
+	"runtime": {
+		"type": "node22",
+		"apiVersion": "0.0.0",
+		"entrypoint": "../dist/main.js"
+	},
+	"keywords": ["akai", "apc", "apc40", "apc20", "apc mini", "apc key 25", "midi", "ableton"],
+	"products": ["APC40", "APC40 mkII", "APC20", "APC mini", "APC mini mk2", "APC Key 25", "APC Key 25 mk2"],
+	"usbIds": []
+}
