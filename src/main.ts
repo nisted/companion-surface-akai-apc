@@ -75,8 +75,8 @@ const ApcPlugin: SurfacePlugin<ApcPortInfo> = {
 							type: 'number',
 							label: 'Fader/knob movement per rotate step',
 							description:
-								'Faders and knobs fire a rotate left/right on their button as they move (0-127 over full travel). ' +
-								'1 = every step; higher = fewer, coarser steps.',
+								'As a fader or knob moves, it fires rotate left/right on its button (0-127 over full travel). ' +
+								'1 = every single step. Higher = fewer, chunkier steps.',
 							default: 1,
 							min: 1,
 							max: 32,
@@ -86,8 +86,8 @@ const ApcPlugin: SurfacePlugin<ApcPortInfo> = {
 							type: 'number',
 							label: 'Fader/knob value update interval (ms)',
 							description:
-								'Value variables update at most this often; the final position is always sent. ' +
-								"Above 50 avoids Companion's 'Rate limited' warning on variable triggers. 0 = every change.",
+								'Value variables update no more often than this. Wherever you stop, that final position always gets sent. ' +
+								"Keep it above 50 and Companion won't grumble 'Rate limited' at your variable triggers. 0 = every change.",
 							default: 60,
 							min: 0,
 							max: 1000,
@@ -98,7 +98,7 @@ const ApcPlugin: SurfacePlugin<ApcPortInfo> = {
 										id: 'ringStyle',
 										type: 'number' as const,
 										label: 'Knob ring style',
-										description: '0 off, 1 single dot, 2 fill (volume), 3 from centre (pan)',
+										description: 'How the LED ring round each knob shows its position. 0 off, 1 single dot, 2 fill (volume), 3 from centre (pan)',
 										default: 1,
 										min: 0,
 										max: 3,
