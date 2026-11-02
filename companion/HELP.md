@@ -47,3 +47,7 @@ The APC40, APC40 mkII and APC20 are switched into the mode where Companion contr
 To make the APC follow the same page as a Stream Deck, put both in the same **surface group** in Companion's Surfaces tab.
 
 Requires Companion 5.0.
+
+### Psst. This one's got mates. 🍹
+
+Akai APC is part of a little crew of Companion modules: some brand new, some old favourites given a good tweak. Want to know who else is in the crew, or grab the freshest version of each one? It's all here: [github.com/nisted/companion-modules](https://github.com/nisted/companion-modules)
