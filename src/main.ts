@@ -98,7 +98,8 @@ const ApcPlugin: SurfacePlugin<ApcPortInfo> = {
 										id: 'ringStyle',
 										type: 'number' as const,
 										label: 'Knob ring style',
-										description: 'How the LED ring round each knob shows its position. 0 off, 1 single dot, 2 fill (volume), 3 from centre (pan)',
+										description:
+											'How the LED ring round each knob shows its position. 0 off, 1 single dot, 2 fill (volume), 3 from centre (pan)',
 										default: 1,
 										min: 0,
 										max: 3,

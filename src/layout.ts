@@ -65,7 +65,8 @@ export function parseMessage(layout: ApcLayout, bytes: number[]): ApcEvent | und
 	if (!msg) return undefined
 	if (msg === 'note' && layout.model.noteChannels && !layout.model.noteChannels.includes(channel)) return undefined
 	const control =
-		layout.byMessage.get(controlKey(msg, channel, number)) ?? layout.byMessageAnyChannel.get(controlKey(msg, -1, number))
+		layout.byMessage.get(controlKey(msg, channel, number)) ??
+		layout.byMessageAnyChannel.get(controlKey(msg, -1, number))
 	if (!control) return undefined
 
 	if (msg === 'note') {

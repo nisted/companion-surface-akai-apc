@@ -123,7 +123,14 @@ function apc40Strips(): ControlDef[] {
 	]
 }
 
-function knobs(row: number, col: number, name: string, firstCc: number, firstRingCc: number, channel: number): ControlDef[] {
+function knobs(
+	row: number,
+	col: number,
+	name: string,
+	firstCc: number,
+	firstRingCc: number,
+	channel: number,
+): ControlDef[] {
 	return Array.from({ length: 8 }, (_, i) =>
 		at(row + Math.floor(i / 4), col + (i % 4), {
 			...cc(`${name} ${i + 1}`, firstCc + i, 'knob', channel, 'ring'),

@@ -37,22 +37,52 @@ test('every model: no two controls share a place or a MIDI message, variable ids
 
 test('control counts match the hardware', () => {
 	const count = (id, pred) => buildLayout(byId[id]).controls.filter(pred).length
-	assert.equal(count('apc40', (c) => c.led === 'tri'), 40)
-	assert.equal(count('apc40', (c) => c.kind === 'knob'), 16)
-	assert.equal(count('apc40', (c) => c.kind === 'fader'), 10) // 8 + master + crossfader
-	assert.equal(count('apc40-mk2', (c) => c.led === 'palette'), 45) // 40 pads + 5 scenes
-	assert.equal(count('apc40-mk2', (c) => c.kind === 'knob'), 16)
-	assert.equal(count('apc-mini', (c) => c.led === 'tri'), 64)
-	assert.equal(count('apc-mini-mk2', (c) => c.led === 'rgb'), 64)
-	assert.equal(count('apc-mini', (c) => c.kind === 'fader'), 9)
-	assert.equal(count('apc-key25-mk2', (c) => c.kind === 'encoder'), 8)
-	assert.equal(count('apc-key25', (c) => c.led === 'tri'), 40)
+	assert.equal(
+		count('apc40', (c) => c.led === 'tri'),
+		40,
+	)
+	assert.equal(
+		count('apc40', (c) => c.kind === 'knob'),
+		16,
+	)
+	assert.equal(
+		count('apc40', (c) => c.kind === 'fader'),
+		10,
+	) // 8 + master + crossfader
+	assert.equal(
+		count('apc40-mk2', (c) => c.led === 'palette'),
+		45,
+	) // 40 pads + 5 scenes
+	assert.equal(
+		count('apc40-mk2', (c) => c.kind === 'knob'),
+		16,
+	)
+	assert.equal(
+		count('apc-mini', (c) => c.led === 'tri'),
+		64,
+	)
+	assert.equal(
+		count('apc-mini-mk2', (c) => c.led === 'rgb'),
+		64,
+	)
+	assert.equal(
+		count('apc-mini', (c) => c.kind === 'fader'),
+		9,
+	)
+	assert.equal(
+		count('apc-key25-mk2', (c) => c.kind === 'encoder'),
+		8,
+	)
+	assert.equal(
+		count('apc-key25', (c) => c.led === 'tri'),
+		40,
+	)
 })
 
 test('ports are recognised as the right model', () => {
 	const cases = {
 		'Akai APC40': 'apc40',
-		'APC40': 'apc40',
+		APC40: 'apc40',
 		'APC40 mkII': 'apc40-mk2',
 		'Akai APC20': 'apc20',
 		'APC MINI': 'apc-mini',
@@ -129,8 +159,9 @@ test('colour mapping', () => {
 	assert.equal(triColour({ r: 200, g: 200, b: 200 }), 5)
 	assert.equal(biColour({ r: 255, g: 80, b: 0 }), 2)
 	assert.equal(biColour({ r: 255, g: 255, b: 0 }), 1)
-	assert.deepEqual(rgbSysex(0x4f, 10, { r: 255, g: 128, b: 0 }), [
-		0xf0, 0x47, 0x7f, 0x4f, 0x24, 0x00, 0x08, 10, 10, 1, 0x7f, 1, 0x00, 0, 0, 0xf7,
-	])
+	assert.deepEqual(
+		rgbSysex(0x4f, 10, { r: 255, g: 128, b: 0 }),
+		[0xf0, 0x47, 0x7f, 0x4f, 0x24, 0x00, 0x08, 10, 10, 1, 0x7f, 1, 0x00, 0, 0, 0xf7],
+	)
 	assert.equal(relativeDelta(64), -64)
 })
